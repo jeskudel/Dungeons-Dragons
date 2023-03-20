@@ -18,7 +18,6 @@ public class saltarPlayer : MonoBehaviour
     {
         _jugador = GetComponent<CharacterController>();
     }
-
     private void OnEnable() => jumpButton.action.performed += Saltar;
     private void OnDisable() => jumpButton.action.performed -= Saltar;
 
@@ -29,6 +28,7 @@ public class saltarPlayer : MonoBehaviour
             return;
         }
         _playerVelocity.y = MathF.Sqrt((-fuerzaSalto) * gravedad);
+        //Debug.Log(_playerVelocity.y);
 
     }
 
@@ -38,8 +38,10 @@ public class saltarPlayer : MonoBehaviour
         if (_jugador.isGrounded && _playerVelocity.y < 0)
         {
             _playerVelocity.y = 0;
+            //Debug.Log("RESETEA velocidad");
         }
         _playerVelocity.y += gravedad * Time.deltaTime;
         _jugador.Move(_playerVelocity * Time.deltaTime);
+       //Debug.Log(_playerVelocity.y + "en el UPDATE");
     }
 }

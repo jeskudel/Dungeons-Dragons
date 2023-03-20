@@ -833,7 +833,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "jump",
+                    "name": "Jump",
                     "type": "Button",
                     "id": "72c419fe-8c02-430c-bdf5-a54c616377a7",
                     "expectedControlType": "Button",
@@ -938,7 +938,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "jump",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

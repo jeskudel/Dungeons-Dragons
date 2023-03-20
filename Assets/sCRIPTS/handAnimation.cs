@@ -11,7 +11,7 @@ public class handAnimation : MonoBehaviour
     [SerializeField]
     private Animator _animador = null;
     [SerializeField]
-    private float _velocidad = 8f;
+    //private float _velocidad = 8f;
 
     private const string ANIMATOR_GRIP_PARAM = "Grip";
     private const string ANIMATOR_TRIGGER_PARAM = "Trigger";
