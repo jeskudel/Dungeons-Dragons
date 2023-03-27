@@ -5,6 +5,7 @@ using UnityEngine;
 public class colisionCharacter : MonoBehaviour
 {
     CharacterController _jugador;
+    Animator _animador;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +22,6 @@ public class colisionCharacter : MonoBehaviour
     {
         //Debug.Log("Colision EMPEZADA!");
         //Debug.Log(_jugador.collisionFlags);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(hit.gameObject.name);
     }
 }

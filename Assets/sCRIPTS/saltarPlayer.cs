@@ -29,7 +29,6 @@ public class saltarPlayer : MonoBehaviour
         }
         _playerVelocity.y = MathF.Sqrt((-fuerzaSalto) * gravedad);
         //Debug.Log(_playerVelocity.y);
-
     }
 
     // Update is called once per frame

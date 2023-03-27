@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class pulsacion : MonoBehaviour
+public class boton : MonoBehaviour
 {
+    public UnityEvent onPress;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class pulsacion : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        onPress?.Invoke();
     }
 }
