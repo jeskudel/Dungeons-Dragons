@@ -19,6 +19,6 @@ public class abrirPuertas : MonoBehaviour
     }
     private void Start()
     {
-        //puerta = GameObject.Find()
+
     }
 }
