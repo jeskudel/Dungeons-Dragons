@@ -38,14 +38,10 @@ public class ControlAtaque : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             GameObject bola = Instantiate(bolaPrefab, puntoAtaque.position, puntoAtaque.rotation);
             bola.GetComponent<Rigidbody>().velocity = (puntoAtaque.forward * velocidadBola);
-            Debug.Log("Esperando.....");
+            this.gameObject.GetComponent<AudioSource>().Play();
             //animacion de atacar
             yield return new WaitForSeconds(frecuenciaDisparo);
             
         }
-
-        //ultimoDisparo = Time.time;
-        //GameObject bola = Instantiate(bolaPrefab, transform.position, transform.rotation);
-        //bola.GetComponent<Rigidbody>().AddForce(transform.forward * velocidadBola);
     }
 }
