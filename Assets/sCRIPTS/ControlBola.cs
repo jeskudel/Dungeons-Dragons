@@ -13,7 +13,7 @@ public class ControlBola : MonoBehaviour
             collision.gameObject.GetComponent<ControlVidas>().QuitarVidas(cantidadVida);
             Debug.Log(collision.gameObject.name);
         }
-        if (collision.gameObject.CompareTag("enemigo"))
+        if (collision.gameObject.CompareTag("enemigo") || collision.gameObject.CompareTag("goblin"))
         {
             collision.gameObject.GetComponent<ControlVidas>().QuitarVidas(cantidadVida);
         }

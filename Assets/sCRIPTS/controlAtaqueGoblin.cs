@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlAtaque : MonoBehaviour
+public class controlAtaqueGoblin : MonoBehaviour
 {
     public GameObject bolaPrefab;
     public float velocidadBola;
     public Transform puntoAtaque;
-    bool jugadorDetectado;
-  
     public float frecuenciaDisparo;
-    private float ultimoDisparo;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("personaje"))
         {
             StartCoroutine("Atacar");
-            Debug.Log("personaje ha entrado!!");
         }
     }
 
@@ -26,7 +22,6 @@ public class ControlAtaque : MonoBehaviour
         if (other.CompareTag("personaje"))
         {
             StopCoroutine("Atacar");
-            Debug.Log("personaje ha salido!!");
         }
     }
 
@@ -36,16 +31,34 @@ public class ControlAtaque : MonoBehaviour
         {
             transform.LookAt(GameObject.FindGameObjectWithTag("personaje").transform);
             yield return new WaitForSeconds(0.2f);
-            GameObject bola = Instantiate(bolaPrefab, puntoAtaque.position, puntoAtaque.rotation);
-            bola.GetComponent<Rigidbody>().velocity = (puntoAtaque.forward * velocidadBola);
-            this.gameObject.GetComponent<AudioSource>().Play();
+            // GameObject bola = Instantiate(bolaPrefab, puntoAtaque.position, puntoAtaque.rotation);
+            // bola.GetComponent<Rigidbody>().velocity = (puntoAtaque.forward * velocidadBola);
+            // this.gameObject.GetComponent<AudioSource>().Play();
             //animacion de atacar
             if (GetComponent<Animator>())
             {
                 this.GetComponent<Animator>().Play("atacar");
             }
             yield return new WaitForSeconds(frecuenciaDisparo);
-            
         }
+    }
+
+    public void Disparar()
+    {
+        GameObject bola = Instantiate(bolaPrefab, puntoAtaque.position, puntoAtaque.rotation);
+        bola.GetComponent<Rigidbody>().velocity = (puntoAtaque.forward * velocidadBola);
+        this.gameObject.GetComponent<AudioSource>().Play();
+    }   
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

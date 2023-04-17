@@ -6,6 +6,7 @@ TagManager:
   tags:
   - personaje
   - enemigo
+  - goblin
   layers:
   - Default
   - TransparentFX

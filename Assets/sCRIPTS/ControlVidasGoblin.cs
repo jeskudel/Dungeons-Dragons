@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControlVidas : MonoBehaviour
+public class ControlVidasGoblin : MonoBehaviour
 {
     [Header("Vidas")]
     public int vidasActual;
@@ -28,12 +28,10 @@ public class ControlVidas : MonoBehaviour
         {
             terminarJuego();
         }
-        else if (vidasActual <= 0 && this.gameObject.CompareTag("enemigo") || vidasActual <= 0 && this.gameObject.CompareTag("goblin"))
+        else if (vidasActual <= 0 && this.gameObject.CompareTag("goblin"))
         {
-            if (this.gameObject.CompareTag("goblin"))
-            {
-                this.GetComponent<Animator>().Play("morir");
-            }
+            //Destroy(this.gameObject);
+            this.GetComponent<Animator>().Play("morir");
             Destroy(this.gameObject, 5);
         }
             
