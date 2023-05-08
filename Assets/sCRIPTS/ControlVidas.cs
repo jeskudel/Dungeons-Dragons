@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ControlVidas : MonoBehaviour
 {
     [Header("Vidas")]
     public int vidasActual;
     public int vidasMax;
+    public Slider barraVida;
 
     // Start is called before the first frame update
     void Start()
     {
         vidasMax = vidasActual;
+        barraVida.value = barraVida.maxValue = vidasActual;
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class ControlVidas : MonoBehaviour
     public void QuitarVidas(int cantidadVida) 
     {
         vidasActual -= cantidadVida;
+        barraVida.value = vidasActual;
         if (vidasActual <= 0 && this.gameObject.CompareTag("personaje"))
         {
             terminarJuego();
