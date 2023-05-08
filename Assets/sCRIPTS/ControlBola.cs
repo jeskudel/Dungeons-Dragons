@@ -11,13 +11,13 @@ public class ControlBola : MonoBehaviour
         if (collision.gameObject.CompareTag("personaje"))
         {
             collision.gameObject.GetComponent<ControlVidas>().QuitarVidas(cantidadVida);
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
         }
         if (collision.gameObject.CompareTag("enemigo") || collision.gameObject.CompareTag("goblin"))
         {
             collision.gameObject.GetComponent<ControlVidas>().QuitarVidas(cantidadVida);
         }
-        this.gameObject.GetComponent<AudioSource>().Play();
+        //this.gameObject.GetComponent<AudioSource>().Play();
         Impacto();
     }
 

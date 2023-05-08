@@ -9,13 +9,11 @@ public class ControlVidas : MonoBehaviour
     [Header("Vidas")]
     public int vidasActual;
     public int vidasMax;
-    public Slider barraVida;
 
     // Start is called before the first frame update
     void Start()
     {
         vidasMax = vidasActual;
-        barraVida.value = barraVida.maxValue = vidasActual;
     }
 
     // Update is called once per frame
@@ -27,12 +25,11 @@ public class ControlVidas : MonoBehaviour
     public void QuitarVidas(int cantidadVida) 
     {
         vidasActual -= cantidadVida;
-        barraVida.value = vidasActual;
         if (vidasActual <= 0 && this.gameObject.CompareTag("personaje"))
         {
             terminarJuego();
         }
-        else if (vidasActual <= 0 && this.gameObject.CompareTag("enemigo") || vidasActual <= 0 && this.gameObject.CompareTag("goblin"))
+        else if (vidasActual <= 0 && this.gameObject.CompareTag("goblin"))
         {
             if (this.gameObject.CompareTag("goblin"))
             {
@@ -40,7 +37,6 @@ public class ControlVidas : MonoBehaviour
             }
             Destroy(this.gameObject, 5);
         }
-            
     }
 
     private void terminarJuego()

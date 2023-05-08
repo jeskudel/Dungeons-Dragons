@@ -16,24 +16,17 @@ public class abrirPuertas : MonoBehaviour
     {
         if (other.tag == "personaje")
         {
-            //this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            Debug.Log("activar apertura");
-            //_animador.ResetTrigger("cerrar");
+            //Debug.Log("activar apertura");
             _animador.SetTrigger("abrir");
-        } else
-        {
-            Debug.Log(other.tag);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "personaje")
         {
-            Debug.Log("desactivar apertura");
-            //_animador.ResetTrigger("abrir");
+            //Debug.Log("desactivar apertura");
             _animador.SetTrigger("cerrar");
         }
-        //this.gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
   
 }
